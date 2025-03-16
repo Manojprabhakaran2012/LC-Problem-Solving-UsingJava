@@ -1,0 +1,15 @@
+class Solution {
+    public int maxProfit(int[] prices) {
+        int fB = Integer.MIN_VALUE;
+        int fS = 0;
+        int sB= Integer.MIN_VALUE;
+        int sS = 0;
+        for(int price:prices){
+            fB = Math.max(fB,-price);
+            fS = Math.max(fS,fB+price);
+            sB = Math.max(sB,fS-price);
+            sS= Math.max(sS,sB+price);
+            }
+        return sS;
+    }
+}
